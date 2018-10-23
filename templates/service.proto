@@ -1,0 +1,28 @@
+syntax = "proto2";
+package asylo.test;
+
+service enc_calls {
+{% for enc_func in enc_funcs %}
+    rpc ec_{{enc_func}}(__requests) returns (__response) {}
+{% endfor %}
+}
+
+service host_calls{
+{% for host_func in host_funcs %}
+    rpc hc_{{host_func}}(__requests) returns (__response) {}
+{% endfor %}
+}
+
+message __requests{
+required int64 arg0 = 1;
+required int64 arg1 = 2;
+required int64 arg2 = 3;
+required int64 arg3 = 4;
+required int64 arg4 = 5;
+required int64 arg5 = 6;
+optional int64 ptr = 7;
+}
+
+message __response{
+required int64 ret = 1;
+}

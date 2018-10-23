@@ -1,0 +1,4 @@
+capstone==3.0.4
+Jinja2==2.10
+lief==0.9.0
+MarkupSafe==1.0

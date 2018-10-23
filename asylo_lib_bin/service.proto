@@ -1,0 +1,43 @@
+syntax = "proto2";
+package asylo.test;
+
+service enc_calls {
+
+    rpc ec__ZN14CServerBrowser6FilterEv(__requests) returns (__response) {}
+
+rpc populate_add(__requests) returns  (__response){}
+}
+
+service host_calls{
+
+    rpc hc_mem_free(__requests) returns (__response) {}
+
+    rpc hc_mem_alloc_debug(__requests) returns (__response) {}
+
+    rpc hc_str_comp(__requests) returns (__response) {}
+
+    rpc hc_str_comp_num(__requests) returns (__response) {}
+
+    rpc hc_str_find_nocase(__requests) returns (__response) {}
+
+    rpc hc_str_comp_nocase(__requests) returns (__response) {}
+
+    rpc hc_fct_ptr(__requests) returns (__response) {}
+
+    rpc hc__Z3maxIiET_S0_S0_(__requests) returns (__response) {}
+
+}
+
+message __requests{
+required int64 arg0 = 1;
+required int64 arg1 = 2;
+required int64 arg2 = 3;
+required int64 arg3 = 4;
+required int64 arg4 = 5;
+required int64 arg5 = 6;
+optional int64 ptr = 7;
+}
+
+message __response{
+required int64 ret = 1;
+}
